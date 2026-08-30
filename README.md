@@ -53,16 +53,28 @@ flowchart TD
     Revise --> MasterPlan
 ```
 
+## 📸 Application Interface & HITL Workflow
+
+| 🖥️ **LangTrip Planner Dashboard** |
+| :---: |
+| ![LangTrip AI Dashboard](assets/screenshots/ui_dashboard.png) |
+
+| ⏸️ **Human-in-the-Loop (HITL) Review & Revision Checkpoint** |
+| :---: |
+| ![Human-in-the-Loop Interrupt](assets/screenshots/hitl_interrupt.png) |
+
 ---
 
 ## 📂 Project Directory Structure
 
 ```
 LangTrip-AI----Multi-Agent-Travel-Planner/
+├── assets/
+│   └── screenshots/               # UI & HITL workflow screenshots
 ├── app.py                         # FastAPI web server & API route handlers
 ├── backend.py                     # LangGraph StateGraph, supervisor, agents & checkpointer
 ├── mcp_client.py                  # MultiServerMCPClient (Tavily, AviationStack, Weather)
-├── custom_weather_mcp_server.py   # FastMCP OpenWeather stdio server
+├── weather_mcp_server.py          # FastMCP OpenWeather stdio server
 ├── requirements.txt               # Project dependencies
 ├── .env                           # Environment configuration (API keys & DB URL)
 ├── tools/
