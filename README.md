@@ -45,11 +45,12 @@ flowchart TD
     Specialists --> ItineraryAgent[📋 Itinerary Architect]
     ItineraryAgent --> HITL[⏸️ Human-in-the-Loop Interrupt]
     
-    HITL -->|Review & Feedback| UserDecision{Traveler Approval?}
-    UserDecision -->|Approved| FinalAgent[🌟 Final Polish Agent]
-    UserDecision -->|Revision Requested| FinalAgent
+    HITL -->|Draft Review| UserDecision{Traveler Decision}
+    UserDecision -->|Approved| Polish[🌟 Final Polish & Formatting]
+    UserDecision -->|Revision Requested + Feedback| Revise[✏️ Feedback-Guided Revision]
     
-    FinalAgent --> MasterPlan([Final Personalized Travel Plan])
+    Polish --> MasterPlan([Final Personalized Travel Plan])
+    Revise --> MasterPlan
 ```
 
 ---
